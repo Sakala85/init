@@ -1,1 +1,11 @@
-iptables -A INPUT -s 10.0.0.0/8 -j DROP
+# Commande : `systemctl list-unit-files --type=service | grep enabled
+
+-->
+
+anacron.service
+apparmore.service
+autovt@.service
+...
+
+-->`
+

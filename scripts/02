@@ -1,3 +1,16 @@
-apt-get -y update >> /var/log/update_script.log
-apt-get -y upgrade >> /var/log/update_script.log
+#!/bin/bash
+echo "username ? : "
+read username
 
+check_exist=`cat /etc/passwd | grep $username`
+if [ "$check_exist" != "$NULL" ]; then
+	sudo passwd -l $username
+	if [ "$(pgrep -u $username)" != "$NULL" ]; then
+		sudo kill -9 $(pgrep -u $username)
+	else
+		echo "user not Logged In"
+	fi
+	sudo userdel -r $username
+else
+	echo "user not find"
+fi

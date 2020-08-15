@@ -1,2 +1,2 @@
 pkill tail
-
+#kill <PID>

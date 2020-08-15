@@ -1,1 +1,4 @@
-tail -f /var/log/syslog &
+
+tail -f /var/log/syslog
+#tail -f /var/log/syslog &>/dev/null &
+#second one without printing logs in terminal

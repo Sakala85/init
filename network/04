@@ -1,1 +1,1 @@
-netstat -rn | grep default
+netstat -rn | grep 'default' | sed 2d | sed -n 's/  */ /gp'
